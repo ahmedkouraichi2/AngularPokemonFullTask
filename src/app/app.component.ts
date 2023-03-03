@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { POKEMONS } from './mock-pokemons';
+import { Pokemon } from './pokemon';
 
 @Component({
   selector: 'app-root',
@@ -6,20 +8,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-    
+  pokemonList : Pokemon[]= POKEMONS ;
+  pokemonSelected :Pokemon   = this.pokemonList[1];
   constructor(){
 
   }
   ngOnInit(): void {
      console.table(this.pokemonList);
-     this.selectPokemon(this.pokemonList[0]);
+
+
+
   }
-  pokemonList = ['Bulbizarre','Salaméche','Carapuce']
+
   title = 'projetAngularPokemeon';
 
 
-        selectPokemon(pokemonName : string){
-        console.log(`vous aves cliquer sur le pokumon n ${pokemonName}`);
-      }
+   }
 
-}
+
