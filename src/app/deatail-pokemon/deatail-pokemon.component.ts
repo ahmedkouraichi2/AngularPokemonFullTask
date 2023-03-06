@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { POKEMONS } from '../mock-pokemons';
 import { Pokemon } from '../pokemon';
+import { PokemonService } from '../pokemon.service';
 
 @Component({
   selector: 'app-deatail-pokemon',
@@ -11,13 +12,12 @@ import { Pokemon } from '../pokemon';
 export class DeatailPokemonComponent implements OnInit {
   pokemonList : Pokemon[] = POKEMONS ;
   pokemon :Pokemon |undefined ;
-  constructor(private route :ActivatedRoute,private router :Router) { }
+  constructor(private route :ActivatedRoute,private router :Router, private pokemonService : PokemonService) { }
 
   ngOnInit(): void {
    const pokementId :string |null = this.route.snapshot.paramMap.get('id');
      if(pokementId){
-      this.pokemon  = this.pokemonList.find( pokemon => pokemon.id == +pokementId );
-      console.log( +pokementId)
+      this.pokemon = this.pokemonService.getPokemonById(+pokementId);
      }else{
        this.pokemon = undefined ;
      }
@@ -29,5 +29,11 @@ export class DeatailPokemonComponent implements OnInit {
   goToDPageList(){
      this.router.navigate(['/pokemons']);
   }
+
+
+  goToPokemoneEditer(pokemon :Pokemon){
+    this.router.navigate(['/pokemons/editer/',pokemon.id])
+  
+    }
 
 }
