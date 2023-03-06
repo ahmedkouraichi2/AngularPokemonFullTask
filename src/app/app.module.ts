@@ -9,6 +9,7 @@ import { BgDirective } from './bg.directive';
 import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
 import { DeatailPokemonComponent } from './deatail-pokemon/deatail-pokemon.component';
 import { ListPokemonComponent } from './list-pokemon/list-pokemon.component';
+import { PokemonModule } from './pokemon/pokemon.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ListPokemonComponent } from './list-pokemon/list-pokemon.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    PokemonModule
 
 
   ],

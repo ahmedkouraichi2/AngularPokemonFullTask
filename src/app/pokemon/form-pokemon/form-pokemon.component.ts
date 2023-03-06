@@ -9,7 +9,7 @@ import { PokemonService } from 'src/app/pokemon.service';
   styleUrls: ['./form-pokemon.component.css']
 })
 export class FormPokemonComponent implements OnInit {
-    pokemon :Pokemon;
+  @Input() pokemon :Pokemon;
   types : string[];
   constructor(private pokemonService :PokemonService,
               private router :Router) { }
