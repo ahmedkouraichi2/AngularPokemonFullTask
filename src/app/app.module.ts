@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BgDirective } from './bg.directive';
 import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
+import { DeatailPokemonComponent } from './deatail-pokemon/deatail-pokemon.component';
+import { ListPokemonComponent } from './list-pokemon/list-pokemon.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
     PageNotFoundComponent,
     BgDirective,
     PokemonTypeColorPipe,
+    DeatailPokemonComponent,
+    ListPokemonComponent,
 
   ],
   imports: [
