@@ -24,7 +24,7 @@ export class FormPokemonComponent implements OnInit {
      return this.pokemon.types.includes(type);
   }
 
-  selectType($event :Event,type :string){ 
+  selectType($event :Event,type :string){
     const isChecked :boolean = ($event.target as HTMLInputElement).checked;
      if(isChecked){
        this.pokemon.types.push(type);
@@ -36,9 +36,10 @@ export class FormPokemonComponent implements OnInit {
 
   onSubmit(){
     console.log("Submit form !");
-    this.router.navigate(['pokemon',this.pokemon.id]);
+    //this.router.navigate(['/pokemon', this.pokemon.id])
+    this.router.navigate(['/pokemons/',this.pokemon.id])
   }
-   
+
 
 
 
